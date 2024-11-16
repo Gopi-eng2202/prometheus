@@ -26,6 +26,10 @@ Running Prometheus on Docker is as simple as `docker run -p 9090:9090
 prom/prometheus`. This starts Prometheus with a sample
 configuration and exposes it on port 9090.
 
+Note: "Running Docker containers as root is not recommended, those running 
+in this way should be aware that the container runs as user "nobody" by default. 
+This will potentially cause permissions errors in certain deployment environments."
+
 The Prometheus image uses a volume to store the actual metrics. For
 production deployments it is highly recommended to use a
 [named volume](https://docs.docker.com/storage/volumes/)
